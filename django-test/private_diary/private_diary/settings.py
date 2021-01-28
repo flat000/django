@@ -153,7 +153,7 @@ LOGGING = {
         },
     },
 
-    # フォー待ったの設定
+    # フォーマッタの設定
     'formatters': {
         'dev': {
             'format': '\t'.join([
