@@ -1,0 +1,25 @@
+<!--b.メンバー情報をグループ化-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>速習 Django</title>
+</head>
+<body>
+{% regroup members by sex as slist %}
+<ul>
+    <!--.グループごとにループ-->
+    {% for s in slist %}
+    <li>{{ s.grouper }}
+        <ul>
+            <!--d.グループ配下の要素をループ-->
+            {% for m in s.list %}
+            <li style="background-color:{% cycle 'skyblue' 'aquamarine' 'lightgreen' 'khaki' %}">{{ m.name }}({{ m.birth }})</li>
+            {% endfor %}
+        </ul>
+        {% resetcycle %}
+    </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

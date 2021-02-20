@@ -1,0 +1,23 @@
+<!--b.メンバー情報をグループ化-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>速習 Django</title>
+</head>
+
+<table class="table">
+    <thead>
+        <th>名前</th><th>性別</th><th>誕生日</th>
+    </thead>
+    {% for m in members %}
+    <tr>
+    <td style="background-color:{% cycle 'skyblue' 'aquamarine' 'lightgreen' as bg %}">{{ m.name }}</td>
+    <td style="background-color:{{bg}}">{{ m.sex }}</td>
+    <td style="background-color:{{bg}}">{{ m.birth }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
